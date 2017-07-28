@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <!--script>
+    document.write('<base href="' + document.location + '" />');
+  </script-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <!--link href="style.css" rel="stylesheet" /-->
+	<style>
+	.container { max-width: 900px; }
+	.input-group { width: 100%; }
+	.input-group input[type='text']{ width: 94%; }
+	</style>
+  </head>
+
+<body>
+ <div class="header">
+  <div class="container">
+   <div class="page-header">
+    <h1><a href='#'>GitHub Viewer</a></h1>
+    <p class="load">Your resource for movie here</p>
+   </div>
+   <div ng-controller="SearchController">
+    <form class="form-inline-lg" ng-submit="search()">
+	 <div class="input-group">
+	  <input type="text" class="form-control" place-holder="movie user ..." ng-model="query">
+	  <span>
+	   <button class="btn btn-default" ng-click="search()">Go!</button>
+	  </span>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
+ 
+ <div class="containter">
+  <div ng-view=""></div>
+ </div>
+  <hr>
+ 
+ <div class="footer">
+ <div class="containter">
+  <p>from @sajidm | movie data from http://api.themoviedb.org</p>
+ </div>
+ </div>
+<script src="https://code.angularjs.org/1.4.4/angular.min.js" data-semver="1.3.20" data-require="angular.js@*"></script>
+<script src="https://code.angularjs.org/1.5.8/angular-route.js" data-semver="1.5.8" data-require="angular-route@*"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap-tpls.min.js"></script>
+
+<script src="movie-app/app.js"></script>
+<script src="movie/service.js"></script>
+<script src="movie-app/search.controller.js"></script>
+<script src="movie-app/results.controller.js"></script>
+</body>
+</html>
