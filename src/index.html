@@ -21,13 +21,13 @@
  <div class="header">
   <div class="container">
    <div class="page-header">
-    <h1><a href='#'>GitHub Viewer</a></h1>
+    <h1><a href='#'>Movie App</a></h1>
     <p class="load">Your resource for movie here</p>
    </div>
    <div ng-controller="SearchController">
     <form class="form-inline-lg" ng-submit="search()">
 	 <div class="input-group">
-	  <input type="text" class="form-control" place-holder="movie user ..." ng-model="query">
+	  <input type="text" class="form-control" place-holder="movie user ..." ng-model="query"  ng-keyup="keyup()" ng-keydown="keydown()">
 	  <span>
 	   <button class="btn btn-default" ng-click="search()">Go!</button>
 	  </span>
