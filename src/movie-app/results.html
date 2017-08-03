@@ -5,12 +5,14 @@
   <li>Results</li>
   
   <accordion>
-   <accordion-group ng-repeat="result in results" is-open="result.open">
+   <accordion-group ng-repeat="result in results" is-open="result.open"
+	ng-click="expand($index, [result.media_type,result.id].join('/'))">
     <accordion-heading>
 	{{result.name ? result.name : result.title}}
 	<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': result.open,
 	'glyphicon-chevron-right': !result.open}"></i>
 	</accordion-heading>
+	<movie-result result="result.data"></movie-result>
    </accordion-group>
   </accordion>
  </ol>

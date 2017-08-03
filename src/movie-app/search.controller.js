@@ -12,7 +12,7 @@ angular.module('movieApp')
 		//$scope.search = function() {
 			console.log('location.url='+$location.url());
 			console.log('scope.query=' + $scope.query);
-			if(timeout) $timeout.cancel(timeout);
+			$timeout.cancel(timeout);
 			if($scope.query) {
 				$location.path('/results').search('q', $scope.query);
 			}

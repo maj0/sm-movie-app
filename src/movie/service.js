@@ -23,10 +23,12 @@ angular.module('movie', [])
 					baseUrl + '/search/multi?api_key=' + api_key + '&query=' + encodeURIComponent(query)
 				);
 		};
+		//https://api.themoviedb.org/3/tv/4194?api_key=1dec39d1390f102f1795b7ddb8d85160
+		//https://api.themoviedb.org/3/tv/253?api_key=1dec39d1390f102f1795b7ddb8d85160
+		//https://image.tmdb.org/t/p/w185_and_h278_bestv2/tWqifoYuwLETmmasnGHO7xBjEtt.jpg
 		service.find = function(id) {
-			return httpPromise(baseUrl + 
-				'/movie/' +
-				encodeURIComponent(id) + 
+			return httpPromise(baseUrl + '/' +
+				id + 
 				'?api_key=' + api_key
 			);
 		};
