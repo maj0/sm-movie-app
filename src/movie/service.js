@@ -6,10 +6,11 @@ angular.module('movie', [])
 		
 		function httpPromise(url) {
 			var deferred = $q.defer();
-			console.log('get url=' + url);
+			//console.log('get url=' + url);
 			$http.get(url)
 			.success(function(data) {
-				console.log('Promise sucess data:' + data);
+				//console.log('Promise sucess data:' + data);
+				data.url = url; // to be used in movie-result directive
 				deferred.resolve(data);
 			})
 			.error(function() {
@@ -27,10 +28,7 @@ angular.module('movie', [])
 		//https://api.themoviedb.org/3/tv/253?api_key=1dec39d1390f102f1795b7ddb8d85160
 		//https://image.tmdb.org/t/p/w185_and_h278_bestv2/tWqifoYuwLETmmasnGHO7xBjEtt.jpg
 		service.find = function(id) {
-			return httpPromise(baseUrl + '/' +
-				id + 
-				'?api_key=' + api_key
-			);
+			return httpPromise(baseUrl + '/' + id + '?api_key=' + api_key);
 		};
 		return service;
 	});

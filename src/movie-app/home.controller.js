@@ -21,6 +21,7 @@ angular.module('movieApp')
 				$scope.result = data;
 			});
 	};
+	var intervalCancel;
 	
 	// Get PopularMovies List
 	/*PopularMovies.get()
@@ -28,7 +29,7 @@ angular.module('movieApp')
 			results = data;*/
 			results = ['movie/4194','tv/3122','movie/140607'];
 			findMovie(results[0]);
-			$interval(function() {
+			intervalCancel = $interval(function() {
 				idx++;
 				findMovie(results[idx % results.length]);
 			}, 5000);

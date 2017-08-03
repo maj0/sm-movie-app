@@ -23,7 +23,7 @@ describe('movie service', function() {
 		var response;
 		//var expectedUrl = 'https://api.themoviedb.org/3/movie/550?api_key=1dec39d1390f102f1795b7ddb8d85160';
 		var expectedUrl = function(url) {
-			console.log('url='+url);
+			//console.log('url='+url);
 			return url.indexOf('https://api.themoviedb.org') !== -1;
 		};
 		//var expectedUrl = /^https:\/\/api.themoviedb.org/;
@@ -35,6 +35,7 @@ describe('movie service', function() {
 				//console.log(angular.mock.dump(response)); //dump=console.log
 			});
 		$httpBackend.flush();
+		delete response.url; // it is set in find method
 		expect(response).toEqual(movieData);
 	})
 
@@ -66,6 +67,7 @@ describe('movie service', function() {
 				//console.log(angular.mock.dump(response)); //dump=console.log
 			});
 		$httpBackend.flush();
+		delete response.url; // it is set in find method
 		expect(response).toEqual(repoData);
 	})
 

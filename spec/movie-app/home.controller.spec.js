@@ -28,7 +28,7 @@ describe('Home Controller', function() {
 	beforeEach(inject(function(_$q_, _PopularMovies_) {
 		spyOn(_PopularMovies_, 'get').and.callFake(function() {
 			var deferred = _$q_.defer();
-			deferred.resolve(['tt0076759','tt0080684','tt0086190']);
+			deferred.resolve(['movie/4194','tv/3122','movie/140607']);
 			return deferred.promise;
 		});
 	}));
@@ -37,7 +37,7 @@ describe('Home Controller', function() {
 		spyOn(_movieApi_, 'find').and.callFake(function() {
 			var deferred = _$q_.defer();
 			var args = _movieApi_.find.calls.mostRecent().args[0];
-			console.log('find args='+args);
+			//console.log('find args='+args);
 			if(args === 'movie/4194') {
 				deferred.resolve(results[0]);
 			} else if (args ===  'tv/3122') {
@@ -63,8 +63,8 @@ describe('Home Controller', function() {
 	}));
 	
 	it('should rotate movies every 5 seconds', function() {
-		console.log('HomeController spec scope=' + angular.mock.dump($scope));
-		console.log('HomeController spec scope.result.title=' + $scope.result.title);
+		//console.log('HomeController spec scope=' + angular.mock.dump($scope));
+		//console.log('HomeController spec scope.result.title=' + $scope.result.title);
 		// should have a default movie
 		expect($scope.result.title).toBe(results[0].title);
 		// should update after 5 seconds

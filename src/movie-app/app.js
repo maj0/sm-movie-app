@@ -1,6 +1,6 @@
 angular.module('movieApp', ['ui.bootstrap','ngRoute','movie','movieCore'])
  .config(function($routeProvider) {
-    console.log('$routeProvider is ' + $routeProvider);
+    //console.log('$routeProvider is ' + $routeProvider);
     $routeProvider
       .when('/', {
         templateUrl: 'movie-app/home.html',

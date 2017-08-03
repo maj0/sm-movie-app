@@ -4,7 +4,7 @@ angular.module('movieApp')
 			$scope.results.push({data:{Name: "User 12345"}});
 			$scope.results.push({data:{Name: "User 12346"}});
 			$scope.results.push({data:{Name: "User 12347"}});*/
-			console.log('results controller location.url='+$location.url());
+			//console.log('results controller location.url='+$location.url());
 			movieApi.search($location.search().q)
 			.then(function(data) {
 				//console.log('data='+data);
