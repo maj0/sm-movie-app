@@ -14,7 +14,7 @@ angular.module('movieApp')
 							'<div class="col-sm-8">',
 								'<h3>{{ result.title?result.title:result.name }}</h3>',
 								'<p>{{ result.overview }}</p>',
-								'<p><a href="{{ result.url }}">{{ result.id }}</a></p>',
+								'<p><a href="{{ result.url }}" target="_blank">{{ result.id }}</a></p>',
 							'</div>',
 						'</div>'
 					].join('')
